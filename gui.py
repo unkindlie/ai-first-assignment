@@ -55,21 +55,17 @@ class GameGUI:
             self.computer_move()
 
     def update_display(self):
-        # Clear existing number buttons
         for widget in self.numbers_frame.winfo_children():
             widget.destroy()
 
-        # Create new number buttons
         for i, num in enumerate(self.game.numbers):
             btn = tk.Button(self.numbers_frame, text=str(num), width=3,
                             command=lambda idx=i: self.handle_click(idx))
             btn.pack(side=tk.LEFT, padx=2)
 
-        # Update scores
         self.human_score_label.config(text=f"Human: {self.game.human_score}")
         self.computer_score_label.config(text=f"Computer: {self.game.computer_score}")
 
-        # Update status
         status = f"Current Player: {self.game.current_player.capitalize()}"
         if self.game.game_over:
             status = self.get_game_result()
@@ -83,7 +79,6 @@ class GameGUI:
         if not moves:
             return
 
-        # Create popup menu
         menu = tk.Menu(self.master, tearoff=0)
         for move in moves:
             if move[0] == 'take':
