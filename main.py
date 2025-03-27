@@ -1,4 +1,6 @@
-import random
-from tkinter import *
-from tkinter import messagebox
-import time
+import tkinter as tk
+from gui import GameGUI
+
+root = tk.Tk()
+gui = GameGUI(root)
+root.mainloop()
