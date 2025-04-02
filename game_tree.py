@@ -1,4 +1,6 @@
+import copy
 from collections import defaultdict
+from game_state import NumberGame
 
 class GameTree:
     def _init_(self):
