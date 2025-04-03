@@ -6,7 +6,7 @@ class NumberGame:
         self.human_score = 0
         self.computer_score = 0
         self.current_player = 'human'
-        self.game_over = False
+        self.game_over = False  # Game starts not over
 
     def get_legal_moves(self, index):
         moves = []
@@ -19,6 +19,7 @@ class NumberGame:
         return moves
 
     def apply_move(self, index, move):
+     # Apply a move to the game state at a specific index and added if else loops according to game play
         num = self.numbers[index]
         if move[0] == 'take':
             if self.current_player == 'human':
